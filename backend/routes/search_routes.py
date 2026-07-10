@@ -12,7 +12,8 @@ def search_users():
     query = request.args.get('q', '')
     
     if not query:
-        return jsonify([]), 200
+        users = User.query.all()
+        return jsonify([user.to_dict() for user in users]), 200
 
     # Search in skills, experience, or about
     search_term = f"%{query}%"
