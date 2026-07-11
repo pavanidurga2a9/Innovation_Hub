@@ -5,7 +5,7 @@ from config.db import db
 
 project_bp = Blueprint('project', __name__)
 
-@project_bp.route('/', methods=['POST'])
+@project_bp.route('', methods=['POST'])
 @jwt_required()
 def create_project():
     current_user_id = get_jwt_identity()
