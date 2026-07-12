@@ -41,7 +41,7 @@ def create_app():
 
     @app.route('/')
     def index():
-        return {"message": "Innovation Hub API is running"}
+        return {"message": "Innovation Hub API is running", "version": "1.0.1"}
 
     return app
 
